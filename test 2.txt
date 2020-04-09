@@ -1,2 +1,14 @@
 si sube, es porque lo logré :p
+
+pequeña guía
+git branch <nombre nueva rama> - crear una rama
+git checkout <nombre rama> - para moverme entre ramas
+
+git add .
+git commit -m ""
+git push
+git pull
+
+git branch -d <nombre rama> - para eliminar una rama
+
 -denn
