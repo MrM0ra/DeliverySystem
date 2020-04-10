@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html>
+	<head>
+<link  rel="icon"   href="imgs/icon_1.png" type="image/png" />
+		<title>EnviamosYa!</title>
+		<meta lang="es">
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" type="text/css" href="style/login_style.css"/>
+	</head>
+
+	<body>
+		<style>
+	input[type=text]{
+        width: 80%;
+        height: 55px;
+		border:1px solid #aaa;
+		border-radius: 4px;
+		margin-top: 30px;
+		outline: none;
+		padding: 8px;
+        box-sizing: border-box;
+        font-size: 18px;
+	}
+	input[type=password]{
+        width: 80%;
+        height: 55px;
+		border:1px solid #aaa;
+		border-radius: 4px;
+		margin: 8px 0;
+		outline: none;
+		padding: 8px;
+        box-sizing: border-box;
+        font-size: 18px;
+	}
+	input[type=button]{
+        width: 80%;
+        height: 55px;
+		border: 1px #aaa;
+		background-color: rgb(12, 197, 12);
+		border-radius: 4px;
+		margin: 8px 0;
+		padding: 8px;	
+        color:white;
+        font-size: 18px;
+	}
+	p{
+		color: rgb(0, 0, 0);
+		font:18px "calibri";
+	}
+</style>
+		<div id="general">
+			<div id= "photo">
+				<img src="imgs/enviamosYa!.png">
+				<img src="imgs/icon_2.png">
+            </div>
+            <div id="separador">
+                <img src="imgs/separador.png">
+            </div>
+			<div id="information">
+                <img id="logo" src="imgs/IniciarSesion.png" >
+                <p style="margin-top: 25px;">Bienvenido al portal de envios... epale epale mi piernita</p>
+				<input type="text" id="tx_user" class="input1" placeholder="Ingresa tu numero de identificación">
+				<input type="password" id="tx_pass" class="input1" placeholder="Contraseña">
+				<p></p>
+				<input type="button" id="btl_login" onclick="alert('Esto es una simulación')" value="Ingresar">
+
+			</div>
+			<div id="space">
+			</div>
+			<div id="check_in">	
+                <pre style="font: 20px calibri";>¿No tienes cuenta? </pre>
+				<p id=txt_signUp style="color: blue; font-size: 20px;" onclick="alert('epale epale mi piernita')"><b>Registrate</b></p>
+			</div>
+		</div>
+	</body>
+</html>
