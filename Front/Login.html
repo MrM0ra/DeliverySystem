@@ -2,12 +2,40 @@
 
 <html>
 	<head>
-<link  rel="icon"   href="imgs/icon_1.png" type="image/png" />
+        <link  rel="icon"   href="imgs/icon_1.png" type="image/png" />
 		<title>EnviamosYa!</title>
 		<meta lang="es">
 		<meta charset="utf-8">
-		
-		<link rel="stylesheet" type="text/css" href="style/login_style.css"/>
+        <link rel="stylesheet" type="text/css" href="style/login_style.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script type="text/javascript">
+            function mostrarPassword(){
+		        var cambio = document.getElementById("txtPassword");
+		        if(cambio.type == "password"){
+			        cambio.type = "text";
+		        }else{
+			    cambio.type = "password";
+		        }
+	        } 
+	            
+            function abrirVentana(){
+                var id = document.getElementById("tx_user").value;
+                var pass = document.getElementById("txtPassword").value;
+                if(id == "admin"){
+                    if(pass == "admin"){
+                        window.open('../Front/userInterface.html','_self');
+                    }else{
+                        alert("Contraseña invalida");
+                    }
+                }else{
+                    alert("Usuario y/o contraseña invalida");
+                }
+            }
+
+        </script>
 	</head>
 
 	<body>
@@ -21,18 +49,22 @@
             </div>
 			<div id="information">
                 <form>
-                <img id="logo" src="imgs/IniciarSesion.png" >
-                <p style="margin-top: 25px;">Bienvenido al portal de envios... epale epale mi piernita</p>
-				<input type="text" name="IDF" id="tx_user" class="input1" placeholder="Ingresa tu numero de identificación">
-				<input type="password" name="pwd" id="tx_pass" class="input1" placeholder="Contraseña">
-				<input type="button" id="btl_login" onclick="alert('Esto es una simulación')" value="Ingresar">
-                  </form>
-			</div>
+                    <img id="logo" src="imgs/IniciarSesion.png" >
+                    <p style="margin-top: 25px;">Bienvenido al portal de envios... epale epale mi piernita</p>
+                    <input type="text" name="IDF" id="tx_user" class="input1" placeholder="Ingresa tu numero de identificación">
+                    <input id="txtPassword" name="pwd" style="margin-left: 55px;" type="password" Class="form-control" placeholder="Contraseña">
+                    <input type="button" id="btl_login" onclick=abrirVentana() value="Ingresar">
+                </form>
+            </div>
+            <div id="btn" class="input-group-append">
+                <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+              </div>
+            </div>
 			<div id="space">
 			</div>
 			<div id="check_in">	
                 <pre style="font: 20px calibri";>¿No tienes cuenta? </pre>
-				<a href="signUp.html"><b>Registrate</b></a>
+				<a href="signUp.html" style="margin-top:-13px;"><b>Registrate</b></a>
 			</div>
 		</div>
 	</body>
