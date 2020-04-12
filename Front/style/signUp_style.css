@@ -54,7 +54,9 @@ input[type=button]{
     border: 1px #aaa;
     background-color: rgb(12, 197, 12);
     border-radius: 4px;
-    margin-top: 15px;
+    margin-top: 15
+    
+    px;
     padding: 8px;	
     color:white;
     font-size: 18px;
