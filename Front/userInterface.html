@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html>
+	<head>
+        <link  rel="icon"   href="imgs/icon_1.png" type="image/png" />
+		<title>EnviamosYa!</title>
+		<meta lang="es">
+		<meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style/userInterface_style.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script type="text/javascript">
+
+            function crearSolicitud(){
+                /*window.open('../Front/userInterface.html','_self');*/
+                alert("crea solicitud");
+            }
+
+            function verPedido(){
+                /*window.open('../Front/userInterface.html','_self');*/
+                alert("ver pedido");
+            }
+
+            function anteriores(){
+                /*window.open('../Front/userInterface.html','_self');*/
+                alert("ver pedidos anteriores");
+            }
+
+            function mostrarInformacion(){
+                alert("informacion del usuario");
+            }
+
+            function cerrar(){
+                var opciones = confirm("Desea cerrar sesión");
+                if(opciones == true){
+                    window.open('../Front/Login.html','_self');
+                }else{
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id= general>
+            <form>
+                <div id=informacion>
+                    <form>
+                        <img src="imgs/usuario.png">
+                        <p style="text-align: center;">NOMBRE</p>
+                        <input type="button" id=informacion name=info style="background-color: rgb(53, 53, 102); "onclick=mostrarInformacion() value="Ver Informacion">
+                        <input type="button" id=close name=logout onclick=cerrar() value="Cerrar Sesión">
+                    </form>
+                </div>
+                <div id= separador>
+                    <img src="imgs/separador.png">
+                </div>
+                <div id=opciones>
+                    <form>
+                        <div id=title>
+                            <img src="imgs/icon_1.png">
+                            <img src="imgs/enviamosYa!.png">
+                        </div>
+                        <div id="botones">
+                            <input type="button" id=crear name=crearSolicitud onclick=crearSolicitud() value="Crear Solicitud Pedido">
+                            <input type="button" id=ver name=ver style="background-color: rgb(53, 53, 102); "onclick=verPedido() value="Ver Pedido">
+                            <input type="button" id=anteriores name=anterior onclick=anteriores() value="Ver Pedidos Anteriores">
+                        </div>
+                    </form>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
