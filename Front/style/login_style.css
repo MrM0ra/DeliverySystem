@@ -46,14 +46,19 @@ div#space{
 }
 
 div#check_in{
-	display: flex;
+	display:flex;
    justify-content: center;
    align-items: center;
+   margin-top: -140px;
 	margin-left: 850px;
 	width: 550px;
     height: 66px;
     
 	
+}
+div#btn{
+    margin-top: -123px;
+    margin-left: 1350px;
 }
 
 input[type=password]{
@@ -72,7 +77,7 @@ input[type=text]{
     height: 55px;
     border:1px solid #aaa;
     border-radius: 4px;
-    margin-top: 30px;
+    margin: 8px 0;
     outline: none;
     padding: 8px;
     box-sizing: border-box;
@@ -92,7 +97,7 @@ input[type=button]{
 }
 p{
     color: rgb(0, 0, 0);
-    font:18px "calibri";
+    font: 18px "calibri";
 }
 a{
     color: blue;
