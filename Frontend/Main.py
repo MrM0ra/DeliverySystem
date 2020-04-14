@@ -18,7 +18,8 @@ class Main:
 			else:
 				flash("Usuario y/o contraseña invalida")
 				return render_template("login.html")
-		return render_template("login.html")
+		else:
+			return render_template("login.html")
 
 	@app.route("/signup/")
 	def signup():

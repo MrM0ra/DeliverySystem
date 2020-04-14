@@ -7,10 +7,8 @@ EnviamosYa!
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 {% endblock %}
-
 {% block script %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        
     <script type="text/javascript">
         function mostrarPassword(){
             var cambio = document.getElementById("txtPassword");
@@ -56,7 +54,7 @@ EnviamosYa!
                 <p style="margin-top: 25px;">Bienvenido al portal de envios... epale epale mi piernita</p>
                 <input type="text" name="IDF" id="tx_user" class="input1" placeholder="Ingresa tu numero de identificación" required>
                 <input id="txtPassword" name="pwd" style="margin-left: 55px;" type="password" Class="form-control" placeholder="Contraseña" required>
-                <input type="button" id="btl_login" value="Ingresar">
+                <input type="submit" id="btl_login" value="Ingresar">
             </form>
         </div>
         <div id="btn" class="input-group-append">
