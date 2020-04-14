@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+{% block title %}
+EnviamosYa!
+{% endblock %}
+{% block style%}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/login_style.css') }}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+{% endblock %}
+
+{% block script %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+    <script type="text/javascript">
+        function mostrarPassword(){
+            var cambio = document.getElementById("txtPassword");
+            if(cambio.type == "password"){
+                cambio.type = "text";
+            }else{
+                cambio.type = "password";
+            }
+	    } 
+	            
+        function abrirVentana(){
+            var id = document.getElementById("tx_user").value;
+            var pass = document.getElementById("txtPassword").value;
+            if(id == "admin"){
+                if(pass == "admin"){
+                    href=" {{ url_for('dashboard') }} "
+                }else{
+                    alert("Usuario y/o contraseña invalida");
+                }
+            }
+        }
+    </script>
+{% endblock %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages%}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+	<div id="general">
+		<div id= "photo">
+			<img src=" {{ url_for('static', filename='imgs/enviamosYa!.png') }} ">
+			<img src=" {{ url_for('static', filename='imgs/icon_2.png') }} ">
+        </div>
+        <div id="separador">
+            <img src=" {{ url_for('static', filename='imgs/separador.png') }} ">
+        </div>
+	    <div id="information">
+            <form action="#" method="post">
+                <img id="logo" src=" {{ url_for('static', filename='imgs/IniciarSesion.png') }} " >
+                <p style="margin-top: 25px;">Bienvenido al portal de envios... epale epale mi piernita</p>
+                <input type="text" name="IDF" id="tx_user" class="input1" placeholder="Ingresa tu numero de identificación" required>
+                <input id="txtPassword" name="pwd" style="margin-left: 55px;" type="password" Class="form-control" placeholder="Contraseña" required>
+                <input type="button" id="btl_login" value="Ingresar">
+            </form>
+        </div>
+        <div id="btn" class="input-group-append">
+            <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+        </div>
+    </div>
+    <div id="space">
+    </div>
+    <div id="check_in">	
+        <pre style="font: 20px calibri";>¿No tienes cuenta? </pre>
+	    <a href="{{ url_for('signup')}}" style="margin-top:-13px;"><b>Registrate</b></a>
+	</div>
+</div>
+{% endblock %}
