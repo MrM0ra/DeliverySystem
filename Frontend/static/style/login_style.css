@@ -74,7 +74,7 @@ input[type=password]{
     font-size: 18px;
 }
 
-input[type=text]{
+input[type=text], input[type=password]{
     width: 80%;
     height: 55px;
     border:1px solid #aaa;
@@ -86,7 +86,7 @@ input[type=text]{
     font-size: 18px;
 }
 
-input[type=button]{
+input[type=button], input[type=submit]{
     width: 80%;
     height: 55px;
     border: 1px #aaa;
@@ -94,18 +94,6 @@ input[type=button]{
     border-radius: 4px;
     margin: 8px 0;
     padding: 8px;	
-    color:white;
-    font-size: 18px;
-}
-
-input[type=submit]{
-    width: 80%;
-    height: 55px;
-    border: 1px #aaa;
-    background-color: rgb(12, 197, 12);
-    border-radius: 4px;
-    margin: 8px 0;
-    padding: 8px;   
     color:white;
     font-size: 18px;
 }
