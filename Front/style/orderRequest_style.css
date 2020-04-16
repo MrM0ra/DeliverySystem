@@ -1,0 +1,74 @@
+*{
+
+	margin:0px;
+	padding:0px;
+}
+div#general{
+	margin: auto;
+	margin-top: 40px;
+    margin-left: 0px;
+	width: 200px;
+    height: 550px; 
+ 
+}
+div#photo{	
+	
+	margin-top: 45px;
+	margin-left: 550px;
+	width: fit-content;
+	
+}
+textarea{
+	
+	background-color: #FFFFFF;
+	border-radius: 0px;
+	border-color: white;
+	width: 450px;
+	height: 250px;
+	margin-top: 40px;
+	margin-left: 600px;
+	font-family: 'Lucida Sans';
+}
+div#remitent{
+	text-align: center;
+	margin-top: -370px;
+	margin-left: 10px;
+	width: 500px;
+	height: 400px;
+	border: 1px solid #8492A6;
+	
+
+}
+div#destinatario{
+	border: 1px solid #8492A6;
+	text-align: center;
+	margin-top: -305px;
+	margin-left: 570px;
+	width: 500px;
+	height: 400px;
+}
+
+
+input[type=text]{
+	width: 380px;
+	height: 60px;
+	margin: 10px;
+	margin-left: 70px;
+	border: 1px solid #8492A6;
+	border-radius: 5px;	
+	box-sizing: border-box;
+	outline: none;
+	
+}
+
+input#send{
+	width: 308.2px;
+  	height: 70px;
+	background-color: #1F6D00;
+	border-radius: 5px;
+	color: white;
+	margin-top: 250px;
+	margin-left: 130px;
+	font-size:20px;
+	padding: 8px;
+}
