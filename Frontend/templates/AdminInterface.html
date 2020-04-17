@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block title %}
+{% endblock %}
+{% block style %}
+    <link rel="StyleSheet" type="text/css" href="{{ url_for('static', filename='style/AdminInterface_style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <img src="{{ url_for('static', filename='imgs/carita.png') }}" width="530px" height="400px">
+                <div>
+                    <button class="verInformacionButton"><a>Ver Información</a></button>
+                </div>
+                <div>
+                    <button class="cerrandoSesionButton"><a>Cerrando sesión</a></button>
+                </div>
+            </div>
+            <div id="separador">
+                <img src="{{ url_for('static', filename='imgs/separador.png') }}" height="600px">
+            </div>
+            <div class="col-sm">
+                <form action="#" method="POST">
+                    <img src="{{ url_for('static', filename='imgs\Enviamos_with_icon.PNG') }}" width="400px" height="150px">
+                    <div>
+                        <button class="verPedidosButton"><a>Ver Pedidos</a></button>
+                    </div>
+                    <div>
+                        <button class="verUsariosButton"><a>Ver Usuarios</a></button>
+                    </div>
+                    <div>
+                        <button class="verMensajerosButton"><a>Ver Mensajeros</a></button>
+                    </div>
+                    <div >
+                        <button class="verEstadisticasButton"><a>Ver Estadisticas</a></button> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
