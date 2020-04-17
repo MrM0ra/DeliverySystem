@@ -5,9 +5,37 @@
         <link  rel="icon"   href="imgs/icon_1.png" type="image/png" />
 		<title>EnviamosYa!</title>
 		<meta lang="es">
-		<meta charset="utf-8">
-		
-		<link rel="stylesheet" type="text/css" href="style/signUp_style.css"/>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style/login_style.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style/signUp_style.css"/>
+        <script type="text/javascript">
+            function mostrarPassword(){
+		        var cambio = document.getElementById("txtPassword");
+		        if(cambio.type == "password"){
+			        cambio.type = "text";
+		        }else{
+			    cambio.type = "password";
+		        }
+	        } 
+	            
+            function abrirVentana(){
+                var id = document.getElementById("tx_user").value;
+                var pass = document.getElementById("txtPassword").value;
+                if(id == "admin"){
+                    if(pass == "admin"){
+                        window.open('../Front/userInterface.html','_self');
+                    }else{
+                        alert("Contraseña invalida");
+                    }
+                }else{
+                    alert("Usuario y/o contraseña invalida");
+                }
+            }
+
+        </script>
     </head>
     <body>
         <div id=title>
@@ -36,16 +64,16 @@
             <p>Identificacion</p>
             <input type="text" name="id" id="tx_id" class="input2">
             <p>Contraseña</p>
-            <input type="password" name="pass" id="tx_pass" class="input2">
+            <input type="password" name="pass" id="txtPassword" class="input2">
             <p>Vuelva a escribir la contraseña</p>
-            <input type="password" name="pass2" id="tx_pass2" class="input2">
+            <input type="password" name="pass2" id="txtPassword2" class="input2">
             <p>Escoja un rol</p>
             <select id=rol name="rol">
                 <option value = default>Escoja un rol</option>
                 <option value = Usuario>1. Usuario</option>
                 <option value = mensajero>2. Mensajero</option>
             </select>
-            <input type="button" id="btl_signUp" onclick="alert('Esto es una simulación')" value="Registrarse">
+            <input type="button" id="btl_signUp" onclick=mostrarLogIn() value="Registrarse">
             </form>
         </div>
     </body>
