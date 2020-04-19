@@ -48,7 +48,7 @@ input[type=text]{
     font-size: 18px;
 }
 
-input[type=button]{
+input[type=submit]{
     width: 60%;
     height: 55px;
     border: 1px #aaa;

@@ -1,0 +1,95 @@
+{% extends 'index.html'%}
+{% block title %}EnviamosYa!{% endblock %}
+{% block style%}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/banner_style.css') }}"/>
+{% endblock %}
+{% block script %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='json/main.js') }}"></script>-->
+    <script type="text/javascript">
+        function envios(){
+            var cambio = document.getElementById("title");
+            var contenido = document.getElementById("contenido");
+            cambio.innerHTML = "ENVIOS";
+            contenido.innerHTML = "CONTENIDO DE ENVIO";
+            document.getElementById("ir").style.marginLeft = '177px';
+            document.getElementById("ir").style.display = 'block';        
+        }
+        function estado(){
+            var cambio = document.getElementById("title");
+            var contenido = document.getElementById("contenido");
+            cambio.innerHTML = "ESTADO";
+            contenido.innerHTML = "EnviamosYa! te brinda información actualizada del rastreo de tus envíos y conocer el estado y los movimientos del envío.";
+            document.getElementById("ir").style.marginLeft = '177px';
+            document.getElementById("ir").style.display = 'block';
+        }
+        function historia(){
+            var cambio = document.getElementById("title");
+            var contenido = document.getElementById("contenido");
+            cambio.innerHTML = "HISTORIAL DE ENVIOS";
+            contenido.innerHTML = "CONTENIDO DE HISTORIAL DE ENVIOS";
+            document.getElementById("ir").style.marginLeft = '177px';
+            document.getElementById("ir").style.display = 'block';
+        }
+    </script>
+{% endblock %}
+{% block content %}
+    <header>
+        <div class="contenedor">
+            <nav class="menu">
+                <ul>
+                    <li><img src="{{ url_for('static', filename='imgs/Enviamos_with_icon_small.png') }}"></li>
+                    <li><a href="" style="margin-left: 200px"><b>Inicio</b></a></li>
+                    <li id="in"><a href=" {{ url_for('login') }} " method="GET" style="margin-left: 150px;"><b>Ingresar</b></a></li>
+                    <li><a href=" {{ url_for('signup') }} "style="margin-left: 150px;"><b>Historia</b></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="page" class="contenedor">
+        <div id="informacion">
+            <img src="{{ url_for('static', filename='imgs/logo_banner.png') }}">
+                <div id="mensaje">
+                    <h3 style="margin: 120px;">¡BIENVENIDO AL PORTAL DE ENVIOS!</h3>
+                </div>
+            </div>
+            <div id="servicios">
+                <img src="{{ url_for('static', filename='imgs/envio.png') }}">
+            </div>
+            <div id="botones">
+                <button style="margin-top: 0;" onclick="envios()">ENVIOS</button>
+                <button onclick="estado()">
+                    RASTREAR
+                <br><br>
+                    ENVIO
+                </button>
+                <button onclick="historia()">
+                    HISTORIAL
+                <br><br>
+                    ENVIOS
+            </button>
+        </div>
+        <div id="info-botones">
+            <p id="title" style="padding: 30px;">SERVICIOS</p>
+            <p id="contenido" style="padding: 30px;">EnviamosYa! PRESTA TRES SERVICIOS PRINCIPALES ... BLA BLA BLA</p>
+            <input id="ir" style="display: none;" type="button" value="IR">
+        </div>
+        <div id="trabajo">
+                <h3 style="margin-top: 70px; margin-left:25px; margin-bottom: 50px; margin-right: 50px;">TRABAJA CON NOSOTROS</h3>
+                <h5> </h5>
+                <button style="width: 300px; height: 70px;">
+                REGISTRATE
+                <br>
+                COMO MENSAJERO
+            </button>
+            <img style="margin-left: 483px; margin-top: -200px;" src="{{ url_for('static', filename='imgs/mensajero-trabajo.jpg') }}">
+        </div>
+        <div>
+            <hr/>
+        </div>
+        <div id="contacto">
+            <p>Servicio al cliente: 01 8000 910 915</p>
+            <p>enviamosya@hotmail.com</p>
+        </div>
+    </div>
+{% endblock %}

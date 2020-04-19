@@ -6,9 +6,11 @@ class Main:
 
 	app.secret_key = "thisissupposedtobesecret"
 
+
 	@app.route("/")
 	def home():
-		return render_template("home.html")
+		return render_template("banner.html")
+
 
 	@app.route("/login/", methods=["POST", "GET"])
 	def login():
@@ -21,13 +23,37 @@ class Main:
 		else:
 			return render_template("login.html")
 
+
 	@app.route("/signup/")
 	def signup():
 		return render_template("signUp.html")
 
-	@app.route("/dashboard/")
+
+	@app.route("/dashboard/", methods=["POST", "GET"])
 	def dashboard():
-		return render_template("order_request.html")
+		if request.method == "POST":
+			if request.form["create_request"]:
+				return redirect(url_for("order_request"))
+			elif request.form["watch_request"] and request.method == "POST":
+				return redirect(url_for("order_request"))
+			elif request.form["watch_past_request"] and request.method == "POST":
+				return redirect(url_for("order_request"))
+		
+		return render_template("userInterface.html")
+
+
+	@app.route("/order_request/", methods=["POST", "GET"])
+	def order_request():
+		if request.method=="POST":
+			if request.form["crearSolicitud"]:
+				return render_template("orderRequest.html")
+
+		return render_template("orderRequest.html")
+
 
 	if __name__ == "__main__":
 		app.run(debug=True)
+
+
+
+		

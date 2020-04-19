@@ -1,9 +1,12 @@
 {% extends 'index.html' %}
+{% block style%}
+
+{% endblock %}
 {% block title %}
-	Home Page
+	Enviamos Ya!
 {% endblock %}
 {% block content %}
-<a href=" {{ url_for('login') }} " method="GET">Login</a>
-<p></p>
-<a href=" {{ url_for('signup') }} ">Sign Up</a>
+	<a href=" {{ url_for('login') }} " method="GET">Login</a>
+	<p></p>
+	<a href=" {{ url_for('signup') }} ">Sign Up</a>
 {% endblock %}

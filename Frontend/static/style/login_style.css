@@ -1,5 +1,4 @@
 *{
-
 	margin:0px;
 	padding:0px;
 }
@@ -10,7 +9,6 @@ div#general{
     margin-left: 0px;
 	width: 1050px;
     height: 550px; 
- 
 }
 
 div#photo{
@@ -18,7 +16,6 @@ div#photo{
 	margin-left: 200px;
 	width: 550px;
     height: 500px;
-
 }
 
 div#separador{
@@ -27,7 +24,6 @@ div#separador{
     margin-left: 800px;
     width: 20px;
     height: 450px;
-
 }
 
 div#information{
@@ -36,7 +32,6 @@ div#information{
 	margin-left: 850px;
 	width: 550px;
 	height: 320px;
-	
 }
 
 div#space{
@@ -52,9 +47,7 @@ div#check_in{
    margin-top: -140px;
 	margin-left: 850px;
 	width: 550px;
-    height: 66px;
-    
-	
+    height: 66px;	
 }
 
 div#btn{
@@ -86,7 +79,7 @@ input[type=text], input[type=password]{
     font-size: 18px;
 }
 
-input[type=button], input[type=submit]{
+input[type=submit]{
     width: 80%;
     height: 55px;
     border: 1px #aaa;
@@ -106,18 +99,6 @@ p{
 a{
     color: blue;
     font: 18px "calibri";
-}
-
-#btl_login{
-    width: 80%;
-    height: 55px;
-    border: 1px #aaa;
-    background-color: rgb(12, 197, 12);
-    border-radius: 4px;
-    margin: 8px 0;
-    padding: 8px;   
-    color:white;
-    font-size: 18px;    
 }
 
 

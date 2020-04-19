@@ -7,8 +7,8 @@
 {% endblock %}
 {% block content %}
     <div id=title>
-        <img src="imgs/registrarse.png">
-        <img src="imgs/icon_1.png" style="margin-left: 370px;">
+        <img src="{{ url_for('static', filename='imgs/registrarse.png') }}">
+        <img src="{{ url_for('static', filename='imgs/icon_1.png') }}" style="margin-left: 370px;">
     </div>
     <div id=data>
         <form>
@@ -25,8 +25,8 @@
             <input type="text" name="phone" id="tx_phone" class="input2">             
         </form>
     </div>
-    <div id=user>
-        <form>
+    <div id="user">
+        <form action="#" method="post">
             <H2>INFORMACIÓN USUARIO</H2>
             <p>Identificacion</p>
             <input type="text" name="id" id="tx_id" class="input2">
@@ -39,8 +39,16 @@
                 <option value = default>Escoja un rol</option>
                 <option value = Usuario>1. Usuario</option>
                 <option value = mensajero>2. Mensajero</option>
-                </select>
-            <input type="button" id="btl_signUp" onclick="alert('Esto es una simulación')" value="Registrarse">
+            </select>
+            <input type="submit" style="width: 60%;
+                                        height: 55px;
+                                        border: 1px #aaa;
+                                        background-color: rgb(12, 197, 12);
+                                        border-radius: 4px;
+                                        margin-top: 15px;
+                                        padding: 8px;   
+                                        color:white;
+                                        font-size: 18px;" value="Registrarse">
         </form>
     </div>
 {% endblock %}

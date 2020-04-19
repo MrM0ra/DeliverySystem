@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% block title %}
+    Solicitar pedido
+{% endblock %}
+{% block style%}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/orderRequest_style.css') }}"/>
+{% endblock %}
+{% block script %}
+{% endblock %}
+{% block content %}
+    <div id="general">
+        <div id= "photo">
+            <img src="{{ url_for('static', filename='imgs/Enviamos_with_icon.PNG') }}">
+        </div>
+        <textarea name="Descripcion" rows="8" cols="5" placeholder="Descripción del paquete..."></textarea>
+        <div id="remitent">
+            <form>
+                <img id="logoR" src="{{ url_for('static', filename='imgs/remitente.PNG') }}" style="margin-left:50px;" >
+                <input type="text" name="name" id="tx_Ruser" class="input1" placeholder="Nombre">
+                <input type="text" name="adress" id="tx_Raddress" class="input1" placeholder="Direccion">
+                <input type="text" name="city" id="tx_Rcity" class="input1" placeholder="Ciudad">
+                <input type="text" name="phone" id="tx_Rnumber" class="input1" placeholder="Telefono">
+            </form>
+        </div>    
+        <input type="submit" id="send" onclick="alert('Esto es una simulación')" value="Enviar solicitud">
+        <div id="destinatario">
+            <form>
+                <img id="logoD" src="{{ url_for('static', filename='imgs/destinatario.PNG') }}" style="margin-left:50px;"> 
+                <input type="text" name="nname" id="tx_Duser" class="input1" placeholder="Nombre">
+                <input type="text" name="adress" id="tx_Daddress" class="input1" placeholder="Direccion">
+                <input type="text" name="city" id="tx_Dcity" class="input1" placeholder="Ciudad">
+                <input type="text" name="phone" id="tx_Dnumber" class="input1" placeholder="Telefono">
+            </form>
+        </div>        
+    </div>
+{% endblock %}

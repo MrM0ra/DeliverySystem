@@ -1,0 +1,62 @@
+{% extends 'index.html'%}
+{% block title %}EnviamosYa!{% endblock %}
+{% block style%}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/userInterface_style.css') }}"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+{% endblock %}
+{% block script %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function crearSolicitud(){
+            alert("crea solicitud");
+        }
+        function verPedido(){
+            alert("ver pedido");
+        }
+        function anteriores(){
+            alert("ver pedidos anteriores");
+        }
+        function mostrarInformacion(){
+            alert("informacion del usuario");
+        }
+        function cerrar(){
+            var opciones = confirm("Desea cerrar sesión");
+            if(opciones == true){
+                window.open('../Front/Login.html','_self');
+            }else{
+            
+            }
+        }
+    </script>
+{% endblock %}
+{% block content %}
+    <div id= general>
+        <form>
+            <div id=informacion>
+                <form>
+                    <img src="{{ url_for('static', filename='imgs/usuario.png') }}">
+                    <p style="text-align: center;">NOMBRE</p>
+                    <input type="button" id=informacion name=info style="background-color: rgb(53, 53, 102); "onclick=mostrarInformacion() value="Ver Informacion">
+                    <input type="button" id=close name=logout onclick=cerrar() value="Cerrar Sesión">
+                </form>
+            </div>
+            <div id= separador>
+                <img src="{{ url_for('static', filename='imgs/separador.png') }}">
+            </div>
+            <div id=opciones>
+                <div id=title>
+                    <img src="{{ url_for('static', filename='imgs/icon_1.png') }}">
+                    <img src="{{ url_for('static', filename='imgs/enviamosYa!.png') }}">
+                </div>
+                <div id="botones">
+                    <form action="#" method="post">
+                        <input type="submit" name="create_request" value="Crear Solicitud Pedido" >
+                        <input type="submit" name="watch_request" value="Ver Pedido">
+                        <input type="submit" name="watch_past_request" value="Ver Pedidos Anteriores">
+                    </form>
+                </div>  
+            </div>
+        </form>
+    </div>
+{% endblock %}

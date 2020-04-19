@@ -1,0 +1,89 @@
+*{
+    margin:0px;
+	padding:0px;
+}
+
+.verPedidosButton{
+
+    width: 320px;
+    height: 45px;
+    border-radius: 6px;
+    background-color: rgb(12, 180, 82);
+    color: white;
+    align-items: center;
+    align-content: center;
+    border: white 2px solid;
+    margin: 20px;
+}
+
+.verUsariosButton{
+    
+    width: 320px;
+    height: 45px;
+    border-radius: 6px;
+    background-color: rgb(12, 85, 180);
+    color: white;
+    align-items: center;
+    align-content: center;
+    border: white 2px solid;
+    margin: 20px;
+
+}
+
+.verMensajerosButton{
+
+    width: 320px;
+    height: 45px;
+    border-radius: 6px;
+    background-color: rgb(12, 180, 82);
+    color: white;
+    align-items: center;
+    align-content: center;
+    border: white 2px solid;
+    margin: 20px;
+
+}
+
+.verEstadisticasButton{
+
+      width: 320px;
+    height: 45px;
+    border-radius: 6px;
+    background-color: rgb(12, 85, 180);
+    color: white;
+    align-items: center;
+    align-content: center;
+    border: white 2px solid;
+    margin: 20px;
+}
+
+.verInformacionButton{
+    width: 250px;
+    height: 45px;
+    border-radius: 6px;
+    background-color: rgb(12, 85, 180);
+    color: white;
+    align-items: center;
+    align-content: center;
+    border: white 2px solid;
+    margin: 20px;
+    margin-left: 140px;
+    border: white 2px solid
+}
+
+.cerrandoSesionButton{
+    width: 250px;
+    height: 45px;
+    border-radius: 6px;
+    background-color: rgb(12, 180, 82);
+    color: white;
+    align-items: center;
+    align-content: center;
+    border: white 2px solid;
+    margin: 20px;
+    margin-left: 140px;
+    border: white 2px solid
+
+}
+
+
