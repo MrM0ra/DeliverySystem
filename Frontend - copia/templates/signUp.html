@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title%}
+    EnviamosYa!
+{% endblock %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/signUp_style.css') }}"/>
+{% endblock %}
+{% block content %}
+    <div id=title>
+        <img src="{{ url_for('static', filename='imgs/registrarse.png') }}">
+        <img src="{{ url_for('static', filename='imgs/icon_1.png') }}" style="margin-left: 370px;">
+    </div>
+    <div id=data>
+        <form>
+            <h2>INFORMACIÓN GENERAL</h2>
+            <p>Nombre completo</p>
+            <input type="text" name="name" id="tx_name" class="input2">
+            <p>Dirección</p>
+            <input type="text" name="address" id="tx_address" class="input2">
+            <p>Barrio</p>
+            <input type="text" name="neighborhood" id="tx_neighborhood" class="input2">
+            <p>Ciudad</p>
+            <input type="text" name="city" id="tx_city" class="input2">
+            <p>Teléfono</p>
+            <input type="text" name="phone" id="tx_phone" class="input2">             
+        </form>
+    </div>
+    <div id="user">
+        <form action="#" method="post">
+            <H2>INFORMACIÓN USUARIO</H2>
+            <p>Identificacion</p>
+            <input type="text" name="id" id="tx_id" class="input2">
+            <p>Contraseña</p>
+            <input type="password" name="pass" id="tx_pass" class="input2">
+            <p>Vuelva a escribir la contraseña</p>
+            <input type="password" name="pass2" id="tx_pass2" class="input2">
+            <p>Escoja un rol</p>
+            <select id=rol name="rol">
+                <option value = default>Escoja un rol</option>
+                <option value = Usuario>1. Usuario</option>
+                <option value = mensajero>2. Mensajero</option>
+            </select>
+            <input type="submit" style="width: 60%;
+                                        height: 55px;
+                                        border: 1px #aaa;
+                                        background-color: rgb(12, 197, 12);
+                                        border-radius: 4px;
+                                        margin-top: 15px;
+                                        padding: 8px;   
+                                        color:white;
+                                        font-size: 18px;" value="Registrarse">
+        </form>
+    </div>
+{% endblock %}

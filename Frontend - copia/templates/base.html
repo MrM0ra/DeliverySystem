@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link  rel="icon" href="{{ url_for('static', filename='imgs/icon_1.png') }}" type="image/png" />
+	<meta lang="es">
+	<meta charset="utf-8">
+	<title>{% block title %}{% endblock %}</title>
+	{% block style%}{% endblock %}
+</head>
+<body>
+	{% block script %}{% endblock %}
+	{% block content %}{% endblock %}
+</body>
+</html>

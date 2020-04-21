@@ -1,4 +1,4 @@
-{% extends 'index.html'%}
+{% extends 'base.html' %}
 {% block title %}EnviamosYa!{% endblock %}
 {% block style%}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/userInterface_style.css') }}"/>
@@ -34,11 +34,11 @@
     <div id= general>
         <form>
             <div id=informacion>
-                <form action="#" method="post">
+                <form>
                     <img src="{{ url_for('static', filename='imgs/usuario.png') }}">
-                    <p style="text-align: center;">{{user}}</p>
-                    <input type="submit" id="informacion" name="info" style="background-color: rgb(53, 53, 102);" value="Ver Informacion">
-                    <input type="submit" id="close" name="logout" value="Cerrar Sesión">
+                    <p style="text-align: center;">NOMBRE</p>
+                    <input type="button" id=informacion name=info style="background-color: rgb(53, 53, 102); "onclick=mostrarInformacion() value="Ver Informacion">
+                    <input type="button" id=close name=logout onclick=cerrar() value="Cerrar Sesión">
                 </form>
             </div>
             <div id= separador>

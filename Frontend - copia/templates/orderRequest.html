@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+    Solicitar pedido
+{% endblock %}
+{% block style%}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/orderRequest-style.css') }}"/>
+{% endblock %}
+{% block script %}
+{% endblock %}
+{% block content %}
+    <div id= "photo">
+        <img src="{{ url_for('static', filename='imgs/Enviamos_with_icon.PNG') }}">
+    </div>
+    <form id="request-form" class="submition-form" action="#" method="post">
+        <div id="remitent">
+            <img id="logo" src="{{ url_for('static', filename='imgs/remitente.PNG') }}" >
+            <input type="text" name="name" id="tx_Ruser" class="input1" placeholder="Nombre" required>
+            <input type="text" name="adress" id="tx_Raddress" class="input1" placeholder="Direccion" required>
+            <input type="text" name="city" id="tx_Rcity" class="input1" placeholder="Ciudad" required>
+            <input type="text" name="phone" id="tx_Rnumber" class="input1" placeholder="Telefono" required>
+        </div>
+        <div id="destinatario">
+            <img id="logo" src="{{ url_for('static', filename='imgs/destinatario.PNG') }}"> 
+            <input type="text" name="nname" id="tx_Duser" class="input1" placeholder="Nombre" required>
+            <input type="text" name="adress" id="tx_Daddress" class="input1" placeholder="Direccion" required>
+            <input type="text" name="city" id="tx_Dcity" class="input1" placeholder="Ciudad" required>
+            <input type="text" name="phone" id="tx_Dnumber" class="input1" placeholder="Telefono" required>
+        </div>
+        <input type="submit" id="send" value="Enviar solicitud" required>
+    </form>
+{% endblock %}

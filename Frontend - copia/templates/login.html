@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 {% block title %}EnviamosYa!{% endblock %}
 {% block style%}
 <!--style="background-color: rgb(53, 53, 102);"-->
@@ -24,6 +24,13 @@
     </script>
 {% endblock %}
 {% block content %}
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages%}
+                <p id="jejex">{{ msg }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 	<div id="general">
 		<div id= "photo">
 			<img src=" {{ url_for('static', filename='imgs/enviamosYa!.png') }} ">
@@ -38,7 +45,7 @@
                 <p style="margin-top: 25px;">Bienvenido al portal de envios</p>
                 <input type="text" name="IDF" id="tx_user" class="input1" placeholder="Ingresa tu numero de identificación" required>
                 <input type="password" name="pwd" id="txtPassword" style="margin-left: 55px;" Class="form-control" placeholder="Contraseña" required>
-                <input type="submit" name="login" value="Ingresar" id="submit" onclick="javascript:alertMsg();">
+                <input type="submit" value="Ingresar" id="submit" onclick="javascript:alertMsg();">
             </form>
         </div>
         <div id="btn" class="input-group-append">
