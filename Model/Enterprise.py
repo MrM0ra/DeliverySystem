@@ -1,5 +1,5 @@
-from User import User, random
-
+from User import User
+import random
 
 class Enterprise:
 

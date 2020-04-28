@@ -1,4 +1,4 @@
-from User import User
+import User
 from Location import Location
 
 

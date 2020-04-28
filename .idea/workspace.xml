@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ffa742f-8a94-44fc-bb40-a14249b76d2a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Delivery System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Delivery System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Courier.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Courier.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/Enterprise.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Enterprise.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +32,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="Enterprise" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -80,22 +84,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="456" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1585955653630" />
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1586639555356">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1588037976172">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586639555356" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1586639555356">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588037976172" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1588037976171">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586639555356" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1586639555355">
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588037976171" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1588037976171">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586639555355" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1586639555356">
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588037976171" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1588037976172">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586639555356" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588037976172" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1588037736695">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1588037736695" />
     <state x="384" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1588029925681">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
