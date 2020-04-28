@@ -1,4 +1,4 @@
-from User import User
+from User import User, random
 
 
 class Enterprise:
@@ -32,3 +32,15 @@ class Enterprise:
 
     def deleteUser(self):
         return 0
+
+    def filterUser(self):
+        couriers = []
+        for i in Enterprise.users:
+            if i.type('Courier'):
+                couriers.append(i)
+        return couriers
+
+    def assignOrder(self, order):
+        couriers = filterUser(self)
+        random_courier = random.choices(couriers)
+        random_courier.getOrders.appened(order)
