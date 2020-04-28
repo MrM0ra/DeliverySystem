@@ -33,14 +33,14 @@ class Enterprise:
     def deleteUser(self):
         return 0
 
-    def filterUser(self):
+    def filterCourier(self):
         couriers = []
         for i in Enterprise.users:
-            if i.type('Courier'):
+            if i.type('Courier') and i.getState() == "disponible":
                 couriers.append(i)
         return couriers
 
     def assignOrder(self, order):
-        couriers = filterUser(self)
+        couriers = filterCourier(self)
         random_courier = random.choices(couriers)
         random_courier.getOrders.appened(order)
