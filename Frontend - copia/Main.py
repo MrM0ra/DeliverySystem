@@ -1,11 +1,25 @@
 from flask import Flask, redirect, url_for, render_template, request, flash
+#from flask_socketio import SocketIO ### se importa para el chat ###
 
 class Main:
 
 	app=Flask(__name__)
-
 	app.secret_key = "thisissupposedtobesecret"
 
+	### esto es para el chat ### 
+	#socketio = SocketIO(app)
+	#@app.route("/") #En este caso iria la ruta que responde a mi html usuario
+	#def sessions:
+	#	return render_template('userInterface.html') #el html del usuario
+
+	#def messageReceived(methods=['GET', 'POST']):
+	#	print("se recibió el mensaje")
+
+	#@socketio.on('my event') #esto me ayuda a conectarme con el boton 
+	#def handle_my_custom_event(json, methods=['GET', 'POST']):
+	#	print('received my event: ' + str(json))
+    #	socketio.emit('my response', json, callback=messageReceived)
+	### hasta aquí ### 
 
 	@app.route("/")
 	def home():
