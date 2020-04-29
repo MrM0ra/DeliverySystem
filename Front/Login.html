@@ -26,6 +26,12 @@
                 var pass = document.getElementById("txtPassword").value;
                 if(id == "admin"){
                     if(pass == "admin"){
+                        window.open('../Front/AdminInterface.html','_self');
+                    }else{
+                        alert("Contraseña invalida");
+                    }
+                }else if(id == "user"){
+                    if(pass == "user"){
                         window.open('../Front/userInterface.html','_self');
                     }else{
                         alert("Contraseña invalida");
@@ -33,8 +39,8 @@
                 }else{
                     alert("Usuario y/o contraseña invalida");
                 }
-            }
 
+            }
         </script>
 	</head>
 
