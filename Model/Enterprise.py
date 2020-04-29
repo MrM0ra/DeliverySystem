@@ -1,6 +1,6 @@
 from Model.Order import Order
 from Model.User import User
-
+import random
 
 class Enterprise:
 
@@ -30,7 +30,7 @@ class Enterprise:
                 found = True
                 Enterprise.users[i].getOrders().append(theOrder)
             i = i+1
-
+        self.assignOrder(self,theOrder)
     def addUser(self, id, pwd, name, lastname, phone, idDoc):
         newUser=User(id, pwd, name, lastname, phone, idDoc)
         Enterprise.users.append(newUser)
@@ -39,7 +39,6 @@ class Enterprise:
         for i in Enterprise.users:
             if i.getName() == username:
                 return i
-
 
     def knowAssignedOrders(self, order ):
         if order.getState() == "Asignada" or order.getState() == "En camino" :
@@ -50,11 +49,20 @@ class Enterprise:
         else:
             messagebox.showinfo(message="Ha ocurrido un error, por favor intente de nuevo,", title="Atención")
 
-
-
-
     def modifyUser(self):
         return 0
 
     def deleteUser(self):
-        return 0
+        return
+
+    def filterCourier(self):
+        couriers = []
+        for i in Enterprise.users:
+            if i.type('Courier') and i.getState() == "disponible":
+                couriers.append(i)
+        return couriers
+
+    def assignOrder(self, order):
+        couriers = self.filterCourier(self)
+        random_courier = random.choices(couriers)
+        random_courier.getOrders.appened(order)
