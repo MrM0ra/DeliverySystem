@@ -56,3 +56,11 @@ class User:
     def setIdDoc(self, idDoc):
         self.idDoc=idDoc
 
+    def available(self):
+        isAvailable = True
+        if len(self.orders) > 1:
+            isAvailable = False
+        return isAvailable
+
+
+
