@@ -38,7 +38,7 @@ class Main:
 	def logout():
 		session.pop("user", None)
 		flash("Salida exitosa")
-		return redirect(url_for("login"))
+		return redirect("/")
 
 
 	@app.route("/dashboard/", methods=["POST", "GET"])
@@ -61,11 +61,21 @@ class Main:
 
 	@app.route("/order_request/", methods=["POST", "GET"])
 	def order_request():
-		if request.method=="POST":
-			return redirect(url_for("dashboard"))
-			flash("Orden efectuada correctamente", "success")
+		if "user" in session:
+			if request.method=="POST":
+				return redirect(url_for("dashboard"))
+				flash("Orden efectuada correctamente", "success")
+			else:
+				return render_template("orderRequest.html")
 		else:
-			return render_template("orderRequest.html")
+			flash("Debe iniciar sesion para acceder a la pagina", "warning")
+			return redirect(url_for("login"))
+
+
+	@app.route("/history/")
+	def history():
+		flash("Historia de la empresa")
+		return render_template("historia.html")
 
 
 	if __name__ == "__main__":

@@ -34,11 +34,13 @@
     <div id= general>
         <form>
             <div id=informacion>
-                <form action="#" method="post">
+                <form action="/logout/" method="post">
                     <img src="{{ url_for('static', filename='imgs/usuario.png') }}">
                     <p style="text-align: center;">{{user}}</p>
                     <input type="submit" id="informacion" name="info" style="background-color: rgb(53, 53, 102);" value="Ver Informacion">
-                    <input type="submit" id="close" name="logout" value="Cerrar Sesión">
+                    <br>
+                    <a href="/logout/">Cerrar sesion</a>
+                    <!--<input type="submit" id="close" name="logout" value="Cerrar Sesión">-->
                 </form>
             </div>
             <div id= separador>
