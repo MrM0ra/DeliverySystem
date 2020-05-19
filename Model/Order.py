@@ -1,6 +1,11 @@
+import sqlalchemy as db
 
 class Order:
-
+    '''
+    engine = db.create_engine('sqlite:///users.sqlite3')
+    con = engine.connect()
+    '''
+    
     def __init__(self, senderLoc, destLoc, state, description):
         self.senderLoc=senderLoc
         self.destLoc=destLoc

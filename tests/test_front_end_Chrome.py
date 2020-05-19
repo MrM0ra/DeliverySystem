@@ -5,8 +5,7 @@ import time
 
 browser=webdriver.Chrome('/Users/c/Downloads/chromedriver')
 
-#browser.get('http://www.youtube.com')
-browser.get('http://127.0.0.1:5000')
+browser.get('https://enviamos-ya.herokuapp.com/')
 
 time.sleep(5)
 
