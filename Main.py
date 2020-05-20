@@ -1,15 +1,19 @@
 from flask import Flask, redirect, url_for, render_template, request, flash, session
 from flask_sqlalchemy import SQLAlchemy
+from flask_socketio import SocketIO, send
 import os
 
 
 app=Flask(__name__)
-
+#Configure database
 app.secret_key = "thisissupposedtobesecret"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db=SQLAlchemy(app)
+#Initialize Flask-SocketIO
+socketio = SocketIO(app)
+
 
 class users(db.Model):
 	_id=db.Column("id", db.Integer, primary_key=True)
@@ -140,8 +144,19 @@ def history():
 	flash("Historia de la empresa")
 	return render_template("historia.html")
 
+@app.route("/chat", methods=['GET', 'POST'])
+def chat():
+	return render_template("chat.html")
+
+@socketio.on('message')
+def message(data):
+	print(f"\n\n{data}\n\n")
+	send(data)
+	
+
 if __name__ == "__main__":
 	db.create_all()
-	app.run(debug=True)
+	socketio.run(app, debug=True)
+	#app.run(debug=True)
 
 		
