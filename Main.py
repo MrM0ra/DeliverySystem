@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, request, flash, session
 from flask_sqlalchemy import SQLAlchemy
-from flask_socketio import SocketIO, send
+from flask_socketio import SocketIO, send, emit
 import os
 
 
@@ -152,6 +152,7 @@ def chat():
 def message(data):
 	print(f"\n\n{data}\n\n")
 	send(data)
+	emit('some-event', 'this is a custom event message')
 	
 
 if __name__ == "__main__":
