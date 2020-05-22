@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () =>{
     var socket = io.connect('http://' + document.domain + ':' + location.port);
 
-    socket.on('connect', () =>{
-        socket.send("Estoy conectado");
-    });
+    //socket.on('connect', () =>{
+      //  socket.send("Estoy conectado");
+    //});
 
     socket.on('message', data => {
       const p = document.createElement('p');
@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () =>{
         console.log(data);
     });
 
+    //Send message
     document.querySelector('#send_message').onclick = () => {
-        socket.send(document.querySelector('#user_message').value);
+        socket.send({'msg': document.querySelector('#user_message').value,
+        'username' : username});
     }
 })

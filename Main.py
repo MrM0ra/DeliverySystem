@@ -146,11 +146,17 @@ def history():
 
 @app.route("/chat", methods=['GET', 'POST'])
 def chat():
-	return render_template("chat.html")
+	#aqui estoy haciendo pruebas pa ver si me manda el nombre, aun no me guarda el nombre, averiguar.
+	if "user" in session:
+		userName=session.get("user", None)
+		return render_template("chat.html", username=userName)
+	else:
+		flash("Debe iniciar sesion para acceder a la pagina", "warning")
+		return redirect(url_for("login"))
 
 @socketio.on('message')
 def message(data):
-	# print(f"\n\n{data}\n\n")
+	print(f"\n\n{data}\n\n")
 	send(data)
 	
 
