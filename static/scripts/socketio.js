@@ -6,11 +6,10 @@ document.addEventListener('DOMContentLoaded', () =>{
     });
 
     socket.on('message', data => {
-       const p = document.createElement('p'); //paragraph element
-       const br = document.createElement('br'); //line break
-       p.innerHTML = data;
-       document.querySelector('#display-message-section').append(p);
-
+      const p = document.createElement('p');
+      const br = document.createElement('br');
+      p.innerHTML = data;
+      document.querySelector('#display-message-section').append(p);
     });
 
     socket.on('some_event', data=>{
@@ -19,6 +18,5 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     document.querySelector('#send_message').onclick = () => {
         socket.send(document.querySelector('#user_message').value);
-    };
-
+    }
 })

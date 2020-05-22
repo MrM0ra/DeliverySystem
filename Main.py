@@ -150,9 +150,8 @@ def chat():
 
 @socketio.on('message')
 def message(data):
-	send(data)
 	# print(f"\n\n{data}\n\n")
-	
+	send(data)
 	
 
 if __name__ == "__main__":
