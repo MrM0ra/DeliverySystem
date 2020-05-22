@@ -150,9 +150,9 @@ def chat():
 
 @socketio.on('message')
 def message(data):
-	print(f"\n\n{data}\n\n")
 	send(data)
-	emit('some_event', 'this is a custom event message')
+	# print(f"\n\n{data}\n\n")
+	
 	
 
 if __name__ == "__main__":

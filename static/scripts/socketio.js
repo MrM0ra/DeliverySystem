@@ -6,13 +6,19 @@ document.addEventListener('DOMContentLoaded', () =>{
     });
 
     socket.on('message', data => {
-        console.log(`Mensaje recibido: ${data}`);
+       const p = document.createElement('p'); //paragraph element
+       const br = document.createElement('br'); //line break
+       p.innerHTML = data;
+       document.querySelector('#display-message-section').append(p);
+
     });
 
     socket.on('some_event', data=>{
         console.log(data);
     });
 
-    
+    document.querySelector('#send_message').onclick = () => {
+        socket.send(document.querySelector('#user_message').value);
+    };
 
 })
