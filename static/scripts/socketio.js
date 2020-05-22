@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         console.log(`Mensaje recibido: ${data}`);
     });
 
-    socket.on('some-event', data=>{
+    socket.on('some_event', data=>{
         console.log(data);
     });
 
