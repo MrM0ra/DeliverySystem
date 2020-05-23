@@ -148,8 +148,9 @@ def history():
 def chat():
 	#aqui estoy haciendo pruebas pa ver si me manda el nombre, aun no me guarda el nombre, averiguar.
 	if "user" in session:
-		userName=session.get("user", None)
-		return render_template("chat.html", username=userName)
+		username1 = session["user"]
+		print(username1)
+		return render_template("chat.html", username=username1)
 	else:
 		flash("Debe iniciar sesion para acceder a la pagina", "warning")
 		return redirect(url_for("login"))
