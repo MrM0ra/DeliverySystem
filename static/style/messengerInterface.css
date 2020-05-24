@@ -2,7 +2,8 @@
     background-color: #0376B3;
     width: 1440px;
     height: 1024px;
-  }
+}
+
 table{
     background-color: white;
     text-align: center;
@@ -11,47 +12,66 @@ table{
     border-radius: 30px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+#titulo{
+    width: 137px;
+    height: 36px;
+}
+
 table#izq{
-    margin-top: -50px;
+    margin-top: -627px;
     margin-left: 100px;
     width: 480px;
 }
+
 table#der{
     margin-top: -627px;
     margin-left: 650px;
     width: 560px;
 }
+
 td#uno{
     border-bottom: 3px solid #ddd;
 }
+
 td#gris{
     color: #47525E;
-  font-size: 20px;
-  text-align: left;
+    font-size: 20px;
+    text-align: left;
 }
+
 td#negrita{
     text-align: left;
 }
+
 th,td#uno,td#cero{
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
 }
 
 th{
     border-bottom: 3px solid #124D0D;
-  }
+}
+
+tr{
+    border-bottom: 3px solid #47525E;
+}
+
 button{
     background-color: #00E806;
     font-size: 20px;
     color: white;
-  border-radius: 5px;
-  width: 95px;
-  height: 55px;
+    border-radius: 5px;
+    width: 95px;
+    height: 55px;
 }
+
 button#boton{
     width: 200px;
     height: 50px;
-
 }
+
 input#home{
     margin-top: 20px;
     margin-left: 1240px;

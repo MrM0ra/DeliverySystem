@@ -1,15 +1,15 @@
-from flask import Flask, redirect, url_for, render_template, request, flash, session
+from flask import Flask, redirect, url_for, render_template, request, flash, session 
+#, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 import sqlite3
-import cx_Oracle
 import os
 
 
 app=Flask(__name__)
 
 app.secret_key = "thisissupposedtobesecret"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 ''' app.config['SQLALCHEMY_DATABASE_URI']= 'oracle://P09551_1_16:P09551_1_16_20201@200.3.193.24:1522/ESTUD' '''
 '''conn = cx_Oracle.connect('P09551_1_16/P09551_1_16_20201@//200.3.193.24:1522/ESTUD')'''
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -19,7 +19,7 @@ db=SQLAlchemy(app)
 #Tabla users en la base de datos
 class Users(db.Model):
 	__tablename__='users'
-	_id=db.Column('id', db.Integer, primary_key=True)
+	id=db.Column('id', db.Integer, primary_key=True)
 	name=db.Column('name', db.String(100))
 	address=db.Column('address', db.String(100))
 	neighborhood=db.Column('neighborhood', db.String(100))
@@ -43,7 +43,7 @@ class Users(db.Model):
 #Tabla orders en la base de datos
 class Orders(db.Model):
 	__tablename__='orders'
-	_id=db.Column('id', db.Integer, primary_key=True)
+	id=db.Column('id', db.Integer, primary_key=True)
 	senderName=db.Column('senderName', db.String(20))
 	senderAddr=db.Column('senderAddr', db.String(20))
 	senderCity=db.Column('senderCity', db.String(20))
@@ -189,7 +189,7 @@ def order_request():
 			actual_user=Users.query.filter_by(document=actual_doc).first()
 			#creacion de la nueva orden/pedido
 			#destynName, destynAddr, destynCity, destynPhon, state, description, senderId):
-			order_new=Orders(r_name, r_address, r_city, r_phone, d_name, d_address, d_city, d_phone, "waiting", o_description, actual_user._id)
+			order_new=Orders(r_name, r_address, r_city, r_phone, d_name, d_address, d_city, d_phone, "waiting", o_description, actual_user.id)
 			#Adicion de la nueva orden a la tabla de orders
 			db.session.add(order_new)
 			#Actualizacion en la base de datos
@@ -207,9 +207,8 @@ def order_request():
 def watch_orders():
 	actual_doc=session.get("doc", None)
 	actual_user=Users.query.filter_by(document=actual_doc).first()
-	s_id=actual_user._id
+	s_id=actual_user.id
 	orders_list=Orders.query.filter_by(senderId=s_id)
-	#print(orders_list)
 	if orders_list:
 		return render_template("messengerInterface.html", content=orders_list)
 	else:
