@@ -39,8 +39,9 @@
                     <p style="text-align: center;">{{user}}</p>
                     <input type="submit" id="informacion" name="info" style="background-color: rgb(53, 53, 102);" value="Ver Informacion">
                     <br>
-                    <a href="/logout/">Cerrar sesion</a>
-                    <!--<input type="submit" id="close" name="logout" value="Cerrar Sesión">-->
+                </form>
+                <form action="/logout/">
+                    <input type="submit" style="background-color: rgb(53, 53, 102);" value="Cerrar Sesion">
                 </form>
             </div>
             <div id= separador>
@@ -52,10 +53,15 @@
                     <img src="{{ url_for('static', filename='imgs/enviamosYa!.png') }}">
                 </div>
                 <div id="botones">
-                    <form action="#" method="post">
+                    <form action="/order_request/" method="get">
                         <input type="submit" name="create_request" value="Crear Solicitud Pedido" >
+                    </form>
+                    <form action="/watch_orders/" method="get">
                         <input type="submit" name="watch_request" value="Ver Pedido">
+                    </form>
+                    <form action="#" method="post">
                         <input type="submit" name="watch_past_request" value="Ver Pedidos Anteriores">
+                    </form>
                     </form>
                 </div>  
             </div>

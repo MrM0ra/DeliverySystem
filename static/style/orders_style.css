@@ -1,0 +1,12 @@
+input[type=button]{
+    width: 60%;
+    height: 55px;
+    border: 1px #aaa;
+    background-color: rgb(12, 197, 12);
+    border-radius: 4px;
+    margin-top: 5%;
+    margin-bottom: 0%;
+    padding: 3%;	
+    color:white;
+    font-size: 18px;
+}
