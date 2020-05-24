@@ -1,4 +1,4 @@
-#from time import localtime, strftime 
+#arreglar el boton, ponerle color e investigar cómo hacer para que se acepten tildesss
 import time
 from flask import Flask, redirect, url_for, render_template, request, flash, session
 from flask_sqlalchemy import SQLAlchemy
