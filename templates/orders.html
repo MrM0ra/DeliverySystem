@@ -1,0 +1,16 @@
+{% extends 'index.html'%}
+{% block title %}EnviamosYa!{% endblock %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/orders_style.css') }}"/>
+{% endblock %}
+{% block content %}
+	{% for x in content %}
+		<!--<p>{{x.senderLoc}} {{x.destLoc}} | {{x.state}}</p>-->
+		<!--<p>{{x.description}}</p>-->
+		<!--<p></p>-->
+	{% endfor %}
+	<p>No existen más pedidos</p>
+	<form action="/dashboard/" method="get">
+        <input type="submit" id="send" value="Volver">
+    </form>
+{% endblock %}
