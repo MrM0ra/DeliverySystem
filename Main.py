@@ -44,16 +44,28 @@ class Users(db.Model):
 class Orders(db.Model):
 	__tablename__='orders'
 	_id=db.Column('id', db.Integer, primary_key=True)
-	senderLoc=db.Column('senderLoc', db.String(10))
-	destLoc=db.Column('destLoc', db.String(10))
+	senderName=db.Column('senderName', db.String(20))
+	senderAddr=db.Column('senderAddr', db.String(20))
+	senderCity=db.Column('senderCity', db.String(20))
+	senderPhon=db.Column('senderPhon', db.String(20))
+	destynName=db.Column('destynName', db.String(20))
+	destynAddr=db.Column('destynAddr', db.String(20))
+	destynCity=db.Column('destynCity', db.String(20))
+	destynPhon=db.Column('destynPhon', db.String(20))
 	state=db.Column('state', db.String(70))
 	description=db.Column('description', db.String(300))
 	senderId=db.Column('senderId', db.Integer, db.ForeignKey('users.id'))
 	user=db.relationship('Users', backref='remitente')
 
-	def __init__(self, senderLoc, destLoc, state, description, senderId):
-		self.senderLoc=senderLoc
-		self.destLoc=destLoc
+	def __init__(self, senderName, senderAddr, senderCity, senderPhon, destynName, destynAddr, destynCity, destynPhon, state, description, senderId):
+		self.senderName=senderName
+		self.senderAddr=senderAddr
+		self.senderCity=senderCity
+		self.senderPhon=senderPhon
+		self.destynName=destynName
+		self.destynAddr=destynAddr
+		self.destynCity=destynCity
+		self.destynPhon=destynPhon
 		self.state=state
 		self.description=description
 		self.senderId=senderId
@@ -164,7 +176,6 @@ def order_request():
 			r_name=request.form["Rname"]
 			r_address=request.form["Radress"]
 			r_city=request.form["Rcity"]
-			r_loc="{}, {}".format(r_city, r_address)
 			r_phone=request.form["Rphone"]
 			#Descripcion del pedido
 			o_description="lol"
@@ -172,13 +183,13 @@ def order_request():
 			d_name=request.form["Dname"]
 			d_address=request.form["Dadress"]
 			d_city=request.form["Dcity"]
-			d_loc="{}, {}".format(d_city, d_address)
 			d_phone=request.form["Dphone"]
 			#query para tener el id del usuario actual
 			actual_doc=session.get("doc", None)
 			actual_user=Users.query.filter_by(document=actual_doc).first()
 			#creacion de la nueva orden/pedido
-			order_new=Orders(r_loc, d_loc, "waiting", o_description, actual_user._id)
+			#destynName, destynAddr, destynCity, destynPhon, state, description, senderId):
+			order_new=Orders(r_name, r_address, r_city, r_phone, d_name, d_address, d_city, d_phone, "waiting", o_description, actual_user._id)
 			#Adicion de la nueva orden a la tabla de orders
 			db.session.add(order_new)
 			#Actualizacion en la base de datos
@@ -200,7 +211,7 @@ def watch_orders():
 	orders_list=Orders.query.filter_by(senderId=s_id)
 	#print(orders_list)
 	if orders_list:
-		return render_template("orders.html", content=orders_list)
+		return render_template("messengerInterface.html", content=orders_list)
 	else:
 		flash("Usted no ha creado ningun pedido aún")
 		return redirect(url_for("dashboard"))

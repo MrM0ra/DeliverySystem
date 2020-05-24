@@ -6,15 +6,10 @@
 {% block content %}
     <input type="button" id="home" onclick="alert('Esto es una simulación')" value="HOME">
 		<table id="izq">
-            
-           <tr><th colspan="3"><img src="{{ url_for('static', filename='imgs/pedidosTitle.PNG') }}"></th></tr>
-           <tr><td id="uno">001</td><td id="uno">JARDIN PLAZA</td><td id="uno"><button >INFO</button></td></tr>
-           <tr><td id="uno">002</td><td  id="uno">COSMOCENTRO</td><td id="uno"><button >INFO</button></td></tr>
-           <tr><td id="uno">003</td><td  id="uno">LA HACIENDA</td><td id="uno"><button >INFO</button></td></tr>
-           <tr><td id="uno">004</td><td  id="uno">MELENDEZ</td><td id="uno"><button >INFO</button></td></tr>
-           <tr><td id="uno">005</td><td  id="uno">ICESI</td><td id="uno"><button >INFO</button></td></tr>
-           <tr><td id="uno">006</td><td  id="uno">TEQUENDAMA</td><td id="uno"><button >INFO</button></td></tr>
-           <tr><td id="cero">007</td><td  id="cero">PAMPALINDA</td><td id="cero"><button >INFO</button></td></tr>
+      <tr><th colspan="3"><img src="{{ url_for('static', filename='imgs/pedidosTitle.PNG') }}"></th></tr>
+    {% for x in content %}
+      <tr><td id="uno">001</td><td id="uno">{{x.senderAddr}}</td><td id="uno"><button >INFO</button></td>
+    {% endfor %}
 		</table>
          <table id="der">
             <tr><th colspan="3"><img src="{{ url_for('static', filename='imgs/descripcionTitle.PNG') }}"></th></tr>
@@ -22,19 +17,17 @@
             <tr><td id="negrita"><B>REMITENTE</B></td><td id="blank"> </td></tr>
             <tr><td id="gris"><B>Nombre:</B></td><td id="negro"> </td></tr>
             <tr><td id="gris"><B>Teléfono:</B></td><td id="negro"> </td></tr>
-            <tr><td id="gris"><B>Tipo de encomienda:</B></td><td id="negro"> </td></tr>
-            <tr><td id="negrita"><B>LUGAR DE RECAUDO:</B></td><td id="blank"> </td></tr>
+            <tr><td id="negrita"><B>LUGAR DE RECAUDO</B></td><td id="blank"> </td></tr>
             <tr><td id="gris"><B>Barrio:</B></td><td id="negro"> </td></tr>
             <tr><td id="gris"><B>Dirección:</B></td><td id="negro"> </td></tr>
             <tr><td id="gris"><B>Ciudad:</B></td><td id="negro"> </td></tr>
-            <tr><td id="negrita"><B>DESTINATARIO:</B></td><td id="blank"> </td></tr>
+            <tr><td id="negrita"><B>DESTINATARIO</B></td><td id="blank"> </td></tr>
             <tr><td id="gris"><B>Nombre:</B></td><td id="negro"> </td></tr>
             <tr><td id="gris"><B>Teléfono:</B></td><td id="negro"> </td></tr>
-            <tr><td id="negrita"><B>LUGAR DE DESTINO:</B></td><td id="blank"> </td></tr>
+            <tr><td id="negrita"><B>LUGAR DE DESTINO</B></td><td id="blank"> </td></tr>
             <tr><td id="gris"><B>Barrio:</B></td><td id="negro"> </td></tr>
             <tr><td id="gris"><B>Dirección:</B></td><td id="negro"> </td></tr>
             <tr><td id="gris"><B>Ciudad:</B></td><td id="negro"> </td></tr>
-            <tr><td id="negrita"><B>MÉTODO DE PAGO:</B></td><td id="blank"> </td></tr>
             <tr><td id="negrita"><B>TOTAL A PAGAR:</B></td><td id="blank"> </td></tr>
             <tr><td id="blank"> </td><td id="blank"> </td></tr>
             <tr><td id="boton"><button id="boton">FINALIZAR Y ARCHIVAR</button></td><td id="blank"> </td></tr>

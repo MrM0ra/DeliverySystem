@@ -5,8 +5,11 @@
 {% endblock %}
 {% block content %}
 	{% for x in content %}
-		<p>{{x}}</p>
+		<!--<p>{{x.senderLoc}} {{x.destLoc}} | {{x.state}}</p>-->
+		<!--<p>{{x.description}}</p>-->
+		<!--<p></p>-->
 	{% endfor %}
+	<p>No existen más pedidos</p>
 	<form action="/dashboard/" method="get">
         <input type="submit" id="send" value="Volver">
     </form>
