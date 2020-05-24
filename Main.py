@@ -209,6 +209,9 @@ def watch_orders():
 	actual_user=Users.query.filter_by(document=actual_doc).first()
 	s_id=actual_user.id
 	orders_list=Orders.query.filter_by(senderId=s_id)
+	for row in orders_list:
+		print(row._asdict())
+		
 	if orders_list:
 		return render_template("messengerInterface.html", content=orders_list)
 	else:
