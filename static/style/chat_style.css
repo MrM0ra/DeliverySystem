@@ -24,7 +24,7 @@
 }
 
 #sidebar p:hover {
-    background-color: #ffc107;
+    background-color: rgb(84, 172, 219);
 }
 
 #sidebar h4 {padding-left: 0.5em;}
@@ -36,7 +36,7 @@
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
-    color: #335177;
+    color: #2ea523;
 }
 
 @media (max-width: 567px) {
@@ -76,9 +76,17 @@
     bottom: 0;
 }
 
+
+
+.button{
+    border-color: grey;
+    background: #0376B3;
+    
+}
+
 input[type=text]:focus{
-    border-color: #ffc107;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px #ffc107;
+    border-color: #0376B3;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 10px #0376B3;
 }
 
 @keyframes fadeIn {
@@ -94,7 +102,7 @@ input[type=text]:focus{
     border-color: grey;
     border-width: 0.5px;
     border-style: solid;
-    background-color: #C2DBFB;
+    background-color: #c9fbc2;
     /* animation */
     animation-name: fadeIn;
     animation-duration: 0.75s;
@@ -107,7 +115,7 @@ input[type=text]:focus{
     margin-right:1em;
     padding: 0.5em 0.5em 0.5em 1em;
     border-radius: 5px;
-    border-color: #206ED2;
+    border-color: #0376B3;
     border-width: 1px;
     border-style: solid;
     /* animation */
@@ -139,11 +147,11 @@ input[type=text]:focus{
 .my-username {
     font-weight: bold;
     font-size: 1.1em;
-    color: #FF6B13;
+    color: #0eac16;
 }
 
 #msg-input {
-    border-color: #ffc107;
+    border-color: #0376B3;
     border-width: 5px;
 }
 
