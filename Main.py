@@ -1,4 +1,5 @@
-from time import localtime, strftime
+#from time import localtime, strftime 
+import time
 from flask import Flask, redirect, url_for, render_template, request, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
@@ -147,7 +148,6 @@ def history():
 
 @app.route("/chat", methods=['GET', 'POST'])
 def chat():
-	#aqui estoy haciendo pruebas pa ver si me manda el nombre, aun no me guarda el nombre, averiguar.
 	if "user" in session:
 		username1 = session["user"]
 		print(username1)
@@ -155,6 +155,17 @@ def chat():
 	else:
 		flash("Debe iniciar sesion para acceder a la pagina", "warning")
 		return redirect(url_for("login"))
+
+@socketio.on('incoming-msg')
+def on_message(data):
+    """Broadcast messages"""
+    msg = data["msg"]
+    username = data["username"]
+    room = data["room"]
+    # Set timestamp
+    time_stamp = time.strftime('%b-%d %I:%M%p', time.localtime())
+    send({"username": username, "msg": msg, "time_stamp": time_stamp}, room=room)
+
 
 @socketio.on('message')
 def message(data):
@@ -164,6 +175,7 @@ def message(data):
 
 @socketio.on('join')
 def join(data):
+
 	join_room(data['room'])
 	send({'msg': data['username'] + " ha entrado a la sala " + data['room'] + "."}, room=data['room'])
 
@@ -175,7 +187,7 @@ def leave(data):
 
 if __name__ == "__main__":
 	db.create_all()
-	socketio.run(app, debug=True)
-	#app.run(debug=True)
+	#socketio.run(app, debug=True)
+	app.run(debug=True)
 
 		
