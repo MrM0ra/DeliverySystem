@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () =>{
 
         //Clear input area
         document.querySelector('#user_message').value = '';
+
+        //Autofocus on text box
+        document.querySelector('#user_message').focus();
     }
 
     document.querySelectorAll('.select-room').forEach(p =>{
