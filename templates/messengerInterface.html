@@ -5,11 +5,7 @@
 {% endblock %}
 {% block script%}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    function changeValuesRight(){
-      
-    }
-  </script>
+  <script type="text/javascript"></script>
 {% endblock %}
 {% block content %}
     <input type="button" id="home" onclick="alert('Esto es una simulación')" value="HOME">
@@ -17,7 +13,7 @@
       <tr id="titulo" style="width: 137px;height: 36px;">
         <th colspan="3"><img src="{{ url_for('static', filename='imgs/pedidosTitle.PNG') }}"></th>
       </tr>
-      {% for x in content %}
+      {% for x in content1 %}
         <tr>
           <td id="uno" name="id">{{x.id}}</td>
           <td id="uno">{{x.senderAddr}}</td>

@@ -211,7 +211,7 @@ def watch_orders():
 	s_id=actual_user.id
 	orders_list=Orders.query.filter_by(senderId=s_id)
 	if orders_list:
-		return render_template("messengerInterface.html", content=orders_list)
+		return render_template("messengerInterface.html", content1=orders_list)
 	else:
 		flash("Usted no ha creado ningun pedido aún")
 		return redirect(url_for("dashboard"))
