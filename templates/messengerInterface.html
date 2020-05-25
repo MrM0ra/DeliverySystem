@@ -17,28 +17,25 @@
         <tr>
           <td id="uno" name="id">{{x.id}}</td>
           <td id="uno">{{x.senderAddr}}</td>
-          <td id="uno"><button onclick="">INFO</button></td>
+          <!--<td id="uno"><button onclick="">INFO</button></td>-->
+          <td id="uno"><details>
+              <summary>Informacion del pedido</summary>
+              <p id="blank">REF: #</p>
+              <p id="negrita"><B>REMITENTE</B></p>
+              <p id="gris"><B>Nombre:</B> {{x.senderName}}</p>
+              <p id="negrita"><B>Telefono:</B> {{x.senderPhon}}</p>
+              <p id="negrita"><B>LUGAR DE RECAUDO</B></p>
+              <p id="gris"><B>Dirección:</B> {{x.senderAddr}}</p>
+              <p id="gris"><B>Ciudad:</B> {{x.senderCity}}</p>
+              <p id="gris"><B>DESTINATARIO</B></p>
+              <p id="gris"><B>Nombre:</B> {{x.destynName}}</p>
+              <p id="negrita"><B>Telefono:</B> {{x.destynPhon}}</p>
+              <p id="negrita"><B>LUGAR DE DESTINO</B></p>
+              <p id="gris"><B>Dirección:</B> {{x.destynAddr}}</p>
+              <p id="gris"><B>Ciudad:</B> {{x.destynCity}}</p>
+            </details>
+          </td>
         </tr>
       {% endfor %}
 		</table>
-    <table id="der">
-      <tr id="titulo"><th colspan="3"><img src="{{ url_for('static', filename='imgs/descripcionTitle.PNG') }}"></th></tr>
-      <tr><td id="blank" name="ref"></td><td id="ref">REF: #</td></tr>
-      <tr><td id="negrita"><B>REMITENTE</B></td><td id="blank"> </td></tr>
-      <tr><td id="gris" name="r_name"><B>Nombre:</B></td><td id="negro"> </td></tr>
-      <tr><td id="gris" name="r_phon"><B>Teléfono:</B></td><td id="negro"> </td></tr>
-      <tr><td id="negrita"><B>LUGAR DE RECAUDO</B></td><td id="blank"> </td></tr>
-      <tr><td id="gris" name="r_neig"><B>Barrio:</B></td><td id="negro"> </td></tr>
-      <tr><td id="gris" name="r_addr"><B>Dirección:</B></td><td id="negro"> </td></tr>
-      <tr><td id="gris" name="r_city"><B>Ciudad:</B></td><td id="negro"> </td></tr>
-      <tr><td id="negrita"><B>DESTINATARIO</B></td><td id="blank"> </td></tr> 
-      <tr><td id="gris" name="d_name"><B>Nombre:</B></td><td id="negro"> </td></tr>
-      <tr><td id="gris" name="d_phon"><B>Teléfono:</B></td><td id="negro"> </td></tr>
-      <tr><td id="negrita"><B>LUGAR DE DESTINO</B></td><td id="blank"> </td></tr>
-      <tr><td id="gris" name="d_addr"><B>Dirección:</B></td><td id="negro"> </td></tr>
-      <tr><td id="gris" name="d_city"><B>Ciudad:</B></td><td id="negro"> </td></tr>
-      <tr><td id="negrita"><B>TOTAL A PAGAR:</B></td><td id="blank"> </td></tr>
-      <tr><td id="blank"> </td><td id="blank"> </td></tr>
-      <tr><td id="boton"><button id="boton">FINALIZAR Y ARCHIVAR</button></td><td id="blank"> </td></tr>
-    </table>
 {% endblock %}

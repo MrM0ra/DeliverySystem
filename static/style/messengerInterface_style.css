@@ -13,33 +13,27 @@ table{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#titulo{
+td{
     width: 137px;
     height: 36px;
 }
 
-table#izq{
-    margin-left: 100px;
-    width: 480px;
-}
-
-table#der{
-    margin-top: -627px;
-    margin-left: 650px;
-    width: 560px;
+#titulo{
+    width: 137px;
+    height: 36px;
 }
 
 td#uno{
     border-bottom: 3px solid #ddd;
 }
 
-td#gris{
+p#gris{
     color: #47525E;
     font-size: 20px;
     text-align: left;
 }
 
-td#negrita{
+p#negrita{
     text-align: left;
 }
 
@@ -55,20 +49,6 @@ th{
 
 tr{
     border-bottom: 3px solid #47525E;
-}
-
-button{
-    background-color: #00E806;
-    font-size: 20px;
-    color: white;
-    border-radius: 5px;
-    width: 95px;
-    height: 55px;
-}
-
-button#boton{
-    width: 200px;
-    height: 50px;
 }
 
 input#home{
