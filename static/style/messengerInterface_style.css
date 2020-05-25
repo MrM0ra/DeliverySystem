@@ -4,6 +4,19 @@
     height: 1024px;
 }
 
+div.centerTable{
+    text-align: center;
+}
+
+div.centerTable table{
+    margin: 0 auto;
+    text-align: left;
+}
+
+div.centerTitulo{
+    text-align: center;
+}
+
 table{
     background-color: white;
     text-align: center;
@@ -21,6 +34,8 @@ td{
 #titulo{
     width: 137px;
     height: 36px;
+    text-align: center;
+    border-bottom: 1px solid #0376B3;
 }
 
 td#uno{
