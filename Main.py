@@ -15,7 +15,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db=SQLAlchemy(app)
 #Initialize Flask-SocketIO
 socketio = SocketIO(app)
-ROOMS = ["lounge", "news", "games", "coding"]
+ROOMS = ["lounge", "Ayuda"]
 
 #Tabla users en la base de datos
 class Users(db.Model):

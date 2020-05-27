@@ -1,47 +1,83 @@
 {% extends 'index.html' %}
 {% block title %}Gestion de pedidos{% endblock %}
 {% block style %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/messengerInterface_style.css') }}"/>
-{% endblock %}
-{% block script%}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/messengerInterface_style.css') }}" />
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!-- Custom css for chat pages -->
+<!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/chat_style.css') }}">-->
 {% endblock %}
 {% block content %}
-    <input type="button" id="home" onclick="alert('Esto es una simulación')" value="HOME">
-    <div class='centerTitulo'>
-      <tr id="titulo" style="width: 137px;height: 36px;">
-        <th colspan="3"><img src="{{ url_for('static', filename='imgs/pedidosTitle.PNG') }}"></th>
-      </tr>
-    </div>
-    
 
-    <div class='centerTable'>
-      <table id="izq">
-        {% for x in content1 %}
-          <tr>
-            <td id="uno" name="id">{{x.id}}</td>
-            <td id="uno">{{x.senderAddr}}</td>
-            <!--<td id="uno"><button onclick="">INFO</button></td>-->
-            <td id="uno"><details>
-                <summary>Informacion del pedido</summary>
-                <p id="blank">REF: #</p>
-                <p id="negrita"><B>REMITENTE</B></p>
-                <p id="gris"><B>Nombre:</B> {{x.senderName}}</p>
-                <p id="negrita"><B>Telefono:</B> {{x.senderPhon}}</p>
-                <p id="negrita"><B>LUGAR DE RECAUDO</B></p>
-                <p id="gris"><B>Dirección:</B> {{x.senderAddr}}</p>
-                <p id="gris"><B>Ciudad:</B> {{x.senderCity}}</p>
-                <p id="gris"><B>DESTINATARIO</B></p>
-                <p id="gris"><B>Nombre:</B> {{x.destynName}}</p>
-                <p id="negrita"><B>Telefono:</B> {{x.destynPhon}}</p>
-                <p id="negrita"><B>LUGAR DE DESTINO</B></p>
-                <p id="gris"><B>Dirección:</B> {{x.destynAddr}}</p>
-                <p id="gris"><B>Ciudad:</B> {{x.destynCity}}</p>
-              </details>
-            </td>
-          </tr>
-        {% endfor %}
-      </table>
+<div class="wrapper">
+  <nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: #58c717">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a id="logout-btn" class="nav-link" href="{{ url_for('dashboard') }}"><span
+                style="color: #335177">Salir</span></a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+
+</div>
+
+<div>
+
+</div>
+<div class='centerTable'>
+  <table id="izq">
+    <div class='funciona'>
+      <div class='centerTitulo' style="width: 200px;height: 36px;">
+        <tr id="titulo" style="width: 200px;height: 36px;">
+          <th colspan="3"><img src="{{ url_for('static', filename='imgs/pedidosTitle.PNG') }}"></th>
+        </tr>.>
+      </div>
+      <div class='tablita'>
+        {% for x in content1 %}
+        <tr>
+          <td id="uno" name="id">{{x.id}}</td>
+          <td id="uno">{{x.senderAddr}}</td>
+          <!--<td id="uno"><button onclick="">INFO</button></td>-->
+          <td id="uno">
+            <details>
+              <summary>Informacion del pedido</summary>
+              <p id="blank">REF: #</p>
+              <p id="negrita"><B>REMITENTE</B></p>
+              <p id="gris"><B>Nombre:</B> {{x.senderName}}</p>
+              <p id="negrita"><B>Telefono:</B> {{x.senderPhon}}</p>
+              <p id="negrita"><B>LUGAR DE RECAUDO</B></p>
+              <p id="gris"><B>Dirección:</B> {{x.senderAddr}}</p>
+              <p id="gris"><B>Ciudad:</B> {{x.senderCity}}</p>
+              <p id="gris"><B>DESTINATARIO</B></p>
+              <p id="gris"><B>Nombre:</B> {{x.destynName}}</p>
+              <p id="negrita"><B>Telefono:</B> {{x.destynPhon}}</p>
+              <p id="negrita"><B>LUGAR DE DESTINO</B></p>
+              <p id="gris"><B>Dirección:</B> {{x.destynAddr}}</p>
+              <p id="gris"><B>Ciudad:</B> {{x.destynCity}}</p>
+            </details>
+          </td>
+        </tr>
+        {% endfor %}
+  </table>
+</div>
+</div>
+
+</div>
+
+
+
+{% endblock %}
+{% block script%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript"></script>
+
 {% endblock %}

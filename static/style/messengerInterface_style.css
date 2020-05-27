@@ -4,6 +4,10 @@
     height: 1024px;
 }
 
+.wrapper {
+    display: flex;
+}
+
 div.centerTable{
     text-align: center;
 }
@@ -15,8 +19,13 @@ div.centerTable table{
 
 div.centerTitulo{
     text-align: center;
+    margin-bottom: auto;
 }
 
+.funciona{
+    margin: auto;
+    position: fixed;
+}
 table{
     background-color: white;
     text-align: center;
@@ -33,9 +42,10 @@ td{
 
 #titulo{
     width: 137px;
-    height: 36px;
+    height: 10px;
     text-align: center;
     border-bottom: 1px solid #0376B3;
+    
 }
 
 td#uno{
@@ -75,4 +85,9 @@ input#home{
     width: 100px;
     height: 30px;
     font-size: 20px;
+}
+
+summary::-webkit-details-marker {
+    color: #124D0D;
+    background-color: #124D0D;
 }
